@@ -29,3 +29,20 @@ val organicSum = primes.sum
 
 // the range operator
 for (prime <- primes) println(prime)
+
+val nums = List (1, 2, 3, 4, 5, 7, 8, 0, 12)
+val evens = nums.filter( x => x % 2 == 0)
+val evens2 = nums.filter(_ %2 == 0) // magic. _ means (whatever it is)
+val odds = nums.filter(x => x%2 != 0)
+
+// concatenating lists
+val allNums = evens ++ odds
+val reversed = allNums.reverse
+val sorted = allNums.sorted
+val duplicated = allNums ++ allNums
+val distinct = duplicated.distinct
+duplicated.distinct.sorted // chainable; of course
+duplicated.max
+duplicated.min
+duplicated.contains(10)
+duplicated.contains(12)
