@@ -46,3 +46,18 @@ duplicated.max
 duplicated.min
 duplicated.contains(10)
 duplicated.contains(12)
+
+// Maps (a.k.a Dictionaries)
+val wars =Map("WWI" -> 1919,
+  "WWII" -> 1939,
+  "First Crusade" -> "Unknown",
+  "Will War End?" -> true,
+  "War Cost" -> 3.3434f)
+
+println(wars("WWI"))
+wars("War Cost")
+wars.contains("World War II")
+
+// safe read from map
+val ww2Date = util.Try(wars("WWII")) getOrElse 0
+val shouldBeZero = util.Try(wars("WW3")) getOrElse 0 // this one will be zero
